@@ -13,3 +13,14 @@ def get_num_characters(text):
                 char_counts[c] += 1
 
     return char_counts
+
+def sorted_character_counts(counts_dict):
+    counts_list = []
+
+    for c in counts_dict:
+        counts_list.append({"char": c, "num": counts_dict[c]})
+
+    counts_list.sort(key=lambda k: k["num"], reverse=True)
+    return counts_list
+
+        
