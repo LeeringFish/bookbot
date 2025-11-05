@@ -4,7 +4,11 @@ from stats import sorted_character_counts
 import sys
 
 def main():
-    text_path = "books/frankenstein.txt"
+    if len(sys.argv) != 2:
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1)
+
+    text_path = sys.argv[1]
     text = get_book_text(text_path)
     word_count = get_num_words(text)
     char_counts = get_num_characters(text)
